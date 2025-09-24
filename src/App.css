@@ -19,7 +19,9 @@ body {
 .bg-crema {
   background-color: #FFFACD;
 }
-
+.textocol{
+  color: #15CAD1;
+}
 .text-primary-custom {
   color: var(--primary) !important;
 }
@@ -112,4 +114,10 @@ body {
 
 .fab:hover {
   color: var(--accent) !important;
+}
+footer{
+  background-color: #f52a89;
+}
+i:hover{
+  background-color: #8d06457a;
 }

@@ -59,7 +59,7 @@ import "./App.css";
     id: 6,
     title: "Torta de Naranja",
     subtitle: "Refrescante, vibrante y llena de sabor",
-    description: `Bizcocho de naranja con buttercream y toques de fruta deshidratada.`,
+    description: `Bizcocho de naranja con buttercream y toques de naranja deshidratada.`,
     ctaText: "Agregar al Carrito",
     precio: 35000,
     imagen: process.env.PUBLIC_URL + "/img/tortanaranja.png",
@@ -68,14 +68,14 @@ import "./App.css";
     id: 7,
     title: "Torta Red Velvet",
     subtitle: "Clásica, sofisticada y llena de encanto",
-    description: `Bizcocho rojo de cacao con relleno y cobertura de queso crema.`,
+    description: `bizcocho rojo a base de yogur, con el equilibrio perfecto entre la suavidad de la vainilla, el frescor del limón y el toque sutil de la cocoa.`,
     ctaText: "Agregar al Carrito",
     precio: 35000,
     imagen: process.env.PUBLIC_URL + "/img/tortaredvelvet.png",
   },
   {
     id: 8,
-    title: "Torta de Yogurt con Arándanos",
+    title: "Torta de Arándanos",
     subtitle: "Ligera, fresca y naturalmente deliciosa",
     description: `Bizcocho de yogurt con buttercream y frescos arándanos.`,
     ctaText: "Agregar al Carrito",
@@ -84,16 +84,16 @@ import "./App.css";
   },
   {
     id: 9,
-    title: "Torta de Chocolate Milky Way",
+    title: "Torta de Milky Way",
     subtitle: "Intensa, cremosa y simplemente irresistible",
     description: `Bizcocho de chocolate con arequipe y chips crocantes.`,
     ctaText: "Agregar al Carrito",
     precio: 35000,
-    imagen: process.env.PUBLIC_URL + "/img/tortamilkyway.png",
+    imagen: process.env.PUBLIC_URL + "/img/tortamilkwhite.png",
   },
   {
     id: 10,
-    title: "Torta de Chocolate con Maní",
+    title: "Torta de Chocolate",
     subtitle: "Intensa, crocante y llena de contraste",
     description: `Bizcocho de chocolate con maní tostado y virutas blancas.`,
     ctaText: "Agregar al Carrito",
@@ -131,17 +131,17 @@ const Navbar = () => {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav ms-auto">
             <li className="nav-item">
-              <a className="nav-link text-primary" href="#productos">
+              <a className="nav-link textocol" href="#productos">
                 Productos
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link text-primary" href="#quienes-somos">
+              <a className="nav-link textocol" href="#quienes-somos">
                 Quiénes Somos
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link text-primary" href="#contactanos">
+              <a className="nav-link textocol" href="#contactanos">
                 Contáctanos
               </a>
             </li>
@@ -172,7 +172,7 @@ const ProductCard = ({ producto, onAgregar }) => {
           <h5 className="card-title text-accent">{producto.title}</h5>
           <h6 className="card-subtitle mb-2 text-muted">{producto.subtitle}</h6>
           <p className="card-text">{producto.description}</p>
-          <p className="card-text fw-bold text-primary">
+          <p className="card-text fw-bold textocol">
             ${producto.precio.toLocaleString("es-CO")} COP
           </p>
           <button
@@ -197,7 +197,7 @@ const Cart = ({ carrito, onEliminar, onComprarWhatsApp }) => {
     carrito
       .map(
         (item) =>
-          `${item.nombre} (x${item.cantidad}) - $${item.precio * item.cantidad}`
+          `${item.title} (x${item.cantidad}) - $${item.precio * item.cantidad}`
       )
       .join("\n") + `\nTotal: $${total}`;
   const whatsappUrl = `https://wa.me/3125928990?text=${encodeURIComponent(
@@ -219,7 +219,7 @@ const Cart = ({ carrito, onEliminar, onComprarWhatsApp }) => {
                 <div className="card cart-item">
                   <div className="card-body d-flex justify-content-between align-items-center">
                     <div>
-                      <h6>{item.nombre}</h6>
+                      <h6>{item.title}</h6>
                       <p>
                         ${item.precio} x {item.cantidad}
                       </p>
@@ -261,14 +261,15 @@ const AboutUs = () => {
         <div className="row align-items-center">
           <div className="col-md-6">
             <img
-              src="https://via.placeholder.com/500x300/FFF8DC/FFB6C1?text=Repostería"
+              src={`${process.env.PUBLIC_URL}/logo.svg`}
               className="img-fluid rounded animate-fade-in"
-              alt="Repostería"
+              alt="Shalito Dulce y Sal"
+              style={{ maxWidth: "250px", height: "auto" }}
             />
           </div>
           <div className="col-md-6">
-            <p className="lead text-primary">
-              Somos Dulce Repostería, un equipo apasionado por crear postres que
+            <p className="lead textocol">
+              Somos Shalito Dulce y Sal, un equipo apasionado por crear tortas que
               endulzan tus momentos especiales. Con ingredientes frescos y
               recetas artesanales, cada bocado es una experiencia de sabor y
               alegría. ¡Ven y descubre nuestra magia dulce!
@@ -306,7 +307,7 @@ const Contact = () => {
           <div className="col-md-8">
             <form onSubmit={handleSubmit}>
               <div className="mb-3">
-                <label htmlFor="nombre" className="form-label text-primary">
+                <label htmlFor="nombre" className="form-label textocol">
                   Nombre
                 </label>
                 <input
@@ -320,7 +321,7 @@ const Contact = () => {
                 />
               </div>
               <div className="mb-3">
-                <label htmlFor="email" className="form-label text-primary">
+                <label htmlFor="email" className="form-label textocol">
                   Email
                 </label>
                 <input
@@ -334,7 +335,7 @@ const Contact = () => {
                 />
               </div>
               <div className="mb-3">
-                <label htmlFor="mensaje" className="form-label text-primary">
+                <label htmlFor="mensaje" className="form-label textocol">
                   Mensaje
                 </label>
                 <textarea
@@ -361,12 +362,12 @@ const Contact = () => {
 // Componente Footer
 const Footer = () => {
   return (
-    <footer className="bg-primary text-white py-4">
+    <footer className="text-white py-4">
       <div className="container">
         <div className="row">
           <div className="col-md-6">
             <h5>Shalito Dulce y Sal</h5>
-            <p>Endulzamos tus días con amor y sabor.</p>
+            <p>¿Quieres saber más de lo que hacemos? Escríbenos, estaremos felices de contarte.</p>
           </div>
           <div className="col-md-6 text-end">
             <h6>Síguenos</h6>
@@ -386,7 +387,7 @@ const Footer = () => {
               <i className="fab fa-whatsapp"></i>
             </a>
             <p className="mt-2">
-              Tel: +1 234 567 890 | Email: info@dulcereposteria.com
+              Tel: +57 3125928990 | Email: shalitodys@gmail.com
             </p>
           </div>
         </div>
@@ -429,10 +430,10 @@ const App = () => {
       <section className="hero bg-pastel text-center py-5" id="hero">
         <div className="container">
           <h1 className="display-4 fw-bold text-accent animate-fade-in">
-            Bienvenido a Shalito Dulce y Sal
+            Somos Shalito Dulce y Sal
           </h1>
-          <p className="lead text-primary">
-            Descubre nuestros postres artesanales llenos de sabor y cariño.
+          <p className="lead textocol">
+            Bienvenido al arte de lo dulce y lo salado… ¡qué alegría tenerte aquí!
           </p>
           <a href="#productos" className="btn btn-accent btn-lg">
             Explorar Productos
