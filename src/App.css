@@ -1,0 +1,115 @@
+/* Paleta de colores */
+:root {
+  --primary: #FFF0F5; /* Rosado pastel */
+  --secondary: #FFFFFF; /* Crema */
+  --accent: #f52a89; /* Dorado */
+  --text-primary: #fcfaf9; /* Marrón dulce */
+}
+
+/* Estilos generales */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #FFF5EE; /* Fondo cálido */
+}
+
+.bg-pastel {
+  background-color: var(--secondary);
+}
+
+.bg-crema {
+  background-color: #FFFACD;
+}
+
+.text-primary-custom {
+  color: var(--primary) !important;
+}
+
+.text-accent {
+  color: var(--accent) !important;
+}
+
+.btn-accent {
+  background-color: var(--accent);
+  border-color: var(--accent);
+  color: #f8f5f3;
+}
+
+.btn-accent:hover {
+  background-color: #f3057479;
+  border-color: #f52a89;
+  color: #f8f5f3;
+  transform: scale(1.05);
+  transition: all 0.3s ease;
+}
+
+.btn-outline-accent {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.btn-outline-accent:hover {
+  background-color: var(--accent);
+  color: white;
+  transform: translateY(-2px);
+  transition: all 0.3s ease;
+}
+
+/* Animaciones */
+.animate-fade-in {
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.product-card {
+  transition: all 0.3s ease;
+  border: none;
+  box-shadow: 0 4px 8px rgba(255, 182, 193, 0.2);
+}
+
+.product-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(255, 182, 193, 0.3);
+}
+
+.cart-item {
+  border: 1px solid var(--primary);
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.cart-item:hover {
+  box-shadow: 0 4px 8px rgba(255, 182, 193, 0.2);
+}
+
+.hero {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+}
+
+.navbar.bg-pastel {
+  background-color: var(--secondary) !important;
+  box-shadow: 0 2px 4px rgba(255, 182, 193, 0.1);
+}
+
+.nav-link {
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: var(--accent) !important;
+}
+
+/* Footer icons - Asume Font Awesome, agrega CDN en index.html: <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"> */
+.fab {
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.fab:hover {
+  color: var(--accent) !important;
+}
