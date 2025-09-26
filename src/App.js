@@ -237,7 +237,7 @@ const Cart = ({ carrito, onEliminar, onComprarWhatsApp }) => {
           `${item.title} (x${item.cantidad}) - $${item.precio * item.cantidad}`
       )
       .join("\n") + `\nTotal: $${total}`;
-  const whatsappUrl = `https://wa.me/3125928990?text=${encodeURIComponent(
+  const whatsappUrl = `https://wa.me/3125928990?text=¡Hola!%20Quiero%20hacer%20un%20pedido%20🎂?text=${encodeURIComponent(
     `Hola! Quiero comprar:\n${mensaje}`
   )}`;
 
@@ -330,7 +330,7 @@ const Footer = () => {
               felices de contarte.
             </p>
           </div>
-          <div className="col-md-6 text-end">
+          <div className="col-md-6 text-start">
             <h6>Síguenos</h6>
             <a
               href="https://www.facebook.com/profile.php?id=100095311225331&mibextid=ZbWKwL"
@@ -344,7 +344,7 @@ const Footer = () => {
             >
               <i className="fab fa-instagram"></i>
             </a>
-            <a href="https://wa.me/3125928990" className="text-white">
+            <a href="https://wa.me/3125928990?text=¡Hola!%20Quiero%20hacer%20un%20pedido%20🎂" className="text-white">
               <i className="fab fa-whatsapp"></i>
             </a>
             <p className="mt-2">
@@ -424,7 +424,7 @@ const App = () => {
         
         {/* Botón WhatsApp */}
         <a
-          href="https://wa.me/573001112233?text=¡Hola!%20Quiero%20hacer%20un%20pedido%20🎂"
+          href="https://wa.me/3125928990?text=¡Hola!%20Quiero%20hacer%20un%20pedido%20🎂"
           className="btn-float whatsapp-float"
           target="_blank"
           rel="noopener noreferrer"
