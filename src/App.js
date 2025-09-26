@@ -7,16 +7,16 @@
 
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./App.css"; 
+import "./App.css";
 
-  const productos = [
+const productos = [
   {
     id: 1,
     title: "Torta de Café",
     subtitle: "Un postre con aroma y distinción",
     description: `Bizcocho esponjoso con buttercream de café y un toque de cocoa.`,
     ctaText: "Agregar al Carrito",
-    precio: 35000,
+    precio: 37000,
     imagen: process.env.PUBLIC_URL + "/img/tortacafe.png",
   },
   {
@@ -25,7 +25,7 @@ import "./App.css";
     subtitle: "Un clásico renovado con el toque perfecto",
     description: `Suave base de vainilla con trozos de Oreo y buttercream cremoso.`,
     ctaText: "Agregar al Carrito",
-    precio: 35000,
+    precio: 37000,
     imagen: process.env.PUBLIC_URL + "/img/tortaoreo.png",
   },
   {
@@ -34,81 +34,117 @@ import "./App.css";
     subtitle: "Un sabor auténtico con tradición y dulzura",
     description: `Bizcocho de vainilla relleno y cubierto con cremoso arequipe.`,
     ctaText: "Agregar al Carrito",
-    precio: 35000,
+    precio: 37000,
     imagen: process.env.PUBLIC_URL + "/img/tortavainillaarequipe.png",
   },
   {
     id: 4,
     title: "Torta de Maracuyá",
     subtitle: "Frescura tropical en cada porción",
-    description: `Base de yogurt suave con buttercream y salsa fresca de maracuyá.`,
+    description: `Esponjosa base de yogurt con buttercream de queso crema, salsa de maracuyá y delicados piquitos de crema. Refrescante y sofisticada.`,
     ctaText: "Agregar al Carrito",
-    precio: 35000,
+    precio: 37000,
     imagen: process.env.PUBLIC_URL + "/img/tortamaracuya.png",
   },
   {
     id: 5,
-    title: "Torta de Zanahoria y Frutos Secos",
+    title: "Torta de Zanahoria",
     subtitle: "Tradición, suavidad y un toque crujiente",
-    description: `Bizcocho de zanahoria con frutos secos y cobertura de buttercream.`,
+    description: `Bizcocho de zanahoria con frutos secos tostados, semi-cubierta de buttercream y un espolvoreado de maní triturado.`,
     ctaText: "Agregar al Carrito",
-    precio: 35000,
+    precio: 37000,
     imagen: process.env.PUBLIC_URL + "/img/tortazanahoria.png",
   },
   {
     id: 6,
     title: "Torta de Naranja",
     subtitle: "Refrescante, vibrante y llena de sabor",
-    description: `Bizcocho de naranja con buttercream y toques de naranja deshidratada.`,
+    description: `Bizcocho de naranja con buttercream, elegantes rosetas y trozos de naranja deshidratada que aportan frescura gourmet.`,
     ctaText: "Agregar al Carrito",
-    precio: 35000,
+    precio: 37000,
     imagen: process.env.PUBLIC_URL + "/img/tortanaranja.png",
   },
   {
     id: 7,
     title: "Torta Red Velvet",
     subtitle: "Clásica, sofisticada y llena de encanto",
-    description: `bizcocho rojo a base de yogur, con el equilibrio perfecto entre la suavidad de la vainilla, el frescor del limón y el toque sutil de la cocoa.`,
+    description: `Bizcocho rojo de cacao con suave buttercream de queso crema, semi-cubierta elegante y detalle de miga en la superficie.`,
     ctaText: "Agregar al Carrito",
-    precio: 35000,
+    precio: 42000,
     imagen: process.env.PUBLIC_URL + "/img/tortaredvelvet.png",
   },
   {
     id: 8,
     title: "Torta de Arándanos",
     subtitle: "Ligera, fresca y naturalmente deliciosa",
-    description: `Bizcocho de yogurt con buttercream y frescos arándanos.`,
+    description: `Bizcocho de yogurt con buttercream de queso crema y un elegante contorno de arándanos frescos que aportan color y frescura.`,
     ctaText: "Agregar al Carrito",
-    precio: 35000,
+    precio: 42000,
     imagen: process.env.PUBLIC_URL + "/img/tortaarandanos.png",
   },
   {
     id: 9,
-    title: "Torta de Milky Way",
+    title: "Torta Milky Way",
     subtitle: "Intensa, cremosa y simplemente irresistible",
-    description: `Bizcocho de chocolate con arequipe y chips crocantes.`,
+    description: `Bizcocho de chocolate con relleno de arequipe, chips crocantes, cubierta de arequipe y zigzag de chocolate.`,
     ctaText: "Agregar al Carrito",
-    precio: 35000,
+    precio: 42000,
     imagen: process.env.PUBLIC_URL + "/img/tortamilkwhite.png",
   },
   {
     id: 10,
     title: "Torta de Chocolate",
     subtitle: "Intensa, crocante y llena de contraste",
-    description: `Bizcocho de chocolate con maní tostado y virutas blancas.`,
+    description: `Bizcocho de chocolate con maní tostado, cobertura de chocolate y virutas de chocolate blanco para un toque sofisticado.`,
     ctaText: "Agregar al Carrito",
-    precio: 35000,
-    imagen: process.env.PUBLIC_URL + "/img/tortachocomani.png",
+    precio: 42000,
+    imagen: process.env.PUBLIC_URL + "/img/tortachoco.png",
   },
   {
     id: 11,
     title: "Torta de Amapola y Coco",
     subtitle: "Exótica, suave y con un toque tropical",
-    description: `Bizcocho de amapola con buttercream y contorno de coco rallado.`,
+    description: `Bizcocho a base de coco y semillas de amapola, semi-cubierta de buttercream y un elegante contorno de coco rallado.`,
     ctaText: "Agregar al Carrito",
-    precio: 35000,
+    precio: 42000,
     imagen: process.env.PUBLIC_URL + "/img/tortaamapolacoco.png",
   },
+  {
+    id: 12,
+    title: "Torta de Almojábana",
+    subtitle: "100% artesanal, auténtica y deliciosa",
+    description: `Bizcocho inspirado en la clásica almojábana con trozos de queso fresco y el dulce toque de la guayaba tradicional.`,
+    ctaText: "Agregar al Carrito",
+    precio: 47000,
+    imagen: process.env.PUBLIC_URL + "/img/tortaalmojabana.png",
+  },
+  {
+    id: 13,
+    title: "Torta de Arándanos Premium",
+    subtitle: "Frescura natural y un toque artesanal",
+    description: `Bizcocho a base de Yogurt y arandanos con relleno artesanal de frutos rojos, buttercream de queso crema y un contorno de arándanos frescos.`,
+    ctaText: "Agregar al Carrito",
+    precio: 47000,
+    imagen: process.env.PUBLIC_URL + "/img/tortaarandanospremiun.png",
+  },
+  {
+    id: 14,
+    title: "Torta de Maracuyá Premium",
+    subtitle: "Exótica, refrescante y llena de sabor tropical",
+    description: `Bizcocho a base de yogurt y maracuyá con relleno de maracuyá, buttercream de queso crema, capa de salsa de maracuyá y sutiles piquitos de crema.`,
+    ctaText: "Agregar al Carrito",
+    precio: 47000,
+    imagen: process.env.PUBLIC_URL + "/img/tortamaracuyapremiun.png",
+  },
+  {
+    id: 15,
+    title: "Red Velvet Premium",
+    subtitle: "Clásica, vibrante y con un toque artesanal",
+    description: `Bizcocho rojo con buttercream de queso crema y relleno artesanal de frutos rojos, semi-cubierta elegante y detalle de miga en la superficie.`,
+    ctaText: "Agregar al Carrito",
+    precio: 47000,
+    imagen: process.env.PUBLIC_URL + "/img/tortaredpremiun.png",
+  }
 ];
 
 
@@ -117,6 +153,12 @@ const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-pastel fixed-top">
       <div className="container">
+        <img
+          src={`${process.env.PUBLIC_URL}/logo.svg`}
+          className="img-fluid rounded animate-fade-in"
+          alt="Shalito Dulce y Sal"
+          style={{ maxWidth: "60px", height: "auto" }}
+        />
         <a className="navbar-brand fw-bold text-accent" href="#hero">
           Shalito Dulce y Sal
         </a>
@@ -138,11 +180,6 @@ const Navbar = () => {
             <li className="nav-item">
               <a className="nav-link textocol" href="#quienes-somos">
                 Quiénes Somos
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link textocol" href="#contactanos">
-                Contáctanos
               </a>
             </li>
             <li className="nav-item">
@@ -251,7 +288,6 @@ const Cart = ({ carrito, onEliminar, onComprarWhatsApp }) => {
     </div>
   );
 };
-
 // Componente AboutUs
 const AboutUs = () => {
   return (
@@ -269,89 +305,11 @@ const AboutUs = () => {
           </div>
           <div className="col-md-6">
             <p className="lead textocol">
-              Somos Shalito Dulce y Sal, un equipo apasionado por crear tortas que
-              endulzan tus momentos especiales. Con ingredientes frescos y
+              Somos Shalito Dulce y Sal, un equipo apasionado por crear tortas
+              que endulzan tus momentos especiales. Con ingredientes frescos y
               recetas artesanales, cada bocado es una experiencia de sabor y
               alegría. ¡Ven y descubre nuestra magia dulce!
             </p>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-};
-
-// Componente Contact
-const Contact = () => {
-  const [formData, setFormData] = useState({
-    nombre: "",
-    email: "",
-    mensaje: "",
-  });
-
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    alert("¡Mensaje enviado! Te contactaremos pronto.");
-    setFormData({ nombre: "", email: "", mensaje: "" });
-  };
-
-  return (
-    <section id="contactanos" className="py-5">
-      <div className="container">
-        <h2 className="text-center mb-4 text-accent">Contáctanos</h2>
-        <div className="row justify-content-center">
-          <div className="col-md-8">
-            <form onSubmit={handleSubmit}>
-              <div className="mb-3">
-                <label htmlFor="nombre" className="form-label textocol">
-                  Nombre
-                </label>
-                <input
-                  type="text"
-                  className="form-control"
-                  id="nombre"
-                  name="nombre"
-                  value={formData.nombre}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
-              <div className="mb-3">
-                <label htmlFor="email" className="form-label textocol">
-                  Email
-                </label>
-                <input
-                  type="email"
-                  className="form-control"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
-              <div className="mb-3">
-                <label htmlFor="mensaje" className="form-label textocol">
-                  Mensaje
-                </label>
-                <textarea
-                  className="form-control"
-                  id="mensaje"
-                  name="mensaje"
-                  rows="5"
-                  value={formData.mensaje}
-                  onChange={handleChange}
-                  required
-                ></textarea>
-              </div>
-              <button type="submit" className="btn btn-accent w-100">
-                Enviar Mensaje
-              </button>
-            </form>
           </div>
         </div>
       </div>
@@ -367,7 +325,10 @@ const Footer = () => {
         <div className="row">
           <div className="col-md-6">
             <h5>Shalito Dulce y Sal</h5>
-            <p>¿Quieres saber más de lo que hacemos? Escríbenos, estaremos felices de contarte.</p>
+            <p>
+              ¿Quieres saber más de lo que hacemos? Escríbenos, estaremos
+              felices de contarte.
+            </p>
           </div>
           <div className="col-md-6 text-end">
             <h6>Síguenos</h6>
@@ -421,6 +382,7 @@ const App = () => {
   const comprarWhatsApp = () => {
     // El link se genera en el componente Cart
   };
+  const totalItems = carrito.reduce((sum, item) => sum + item.cantidad, 0);
 
   return (
     <div className="App">
@@ -433,7 +395,8 @@ const App = () => {
             Somos Shalito Dulce y Sal
           </h1>
           <p className="lead textocol">
-            Bienvenido al arte de lo dulce y lo salado… ¡qué alegría tenerte aquí!
+            Bienvenido al arte de lo dulce y lo salado… ¡qué alegría tenerte
+            aquí!
           </p>
           <a href="#productos" className="btn btn-accent btn-lg">
             Explorar Productos
@@ -443,7 +406,7 @@ const App = () => {
 
       {/* Sección Productos */}
       <section id="productos" className="py-5">
-        <div className="container">
+        <div className="container my-5">
           <h2 className="text-center mb-5 text-accent">Nuestros Productos</h2>
           <div className="row">
             {productos.map((producto) => (
@@ -457,21 +420,36 @@ const App = () => {
         </div>
       </section>
 
-      {/* Carrito */}
-      <Cart
-        carrito={carrito}
-        onEliminar={eliminarDelCarrito}
-        onComprarWhatsApp={comprarWhatsApp}
-      />
+      <div className="App">
+        
+        {/* Botón WhatsApp */}
+        <a
+          href="https://wa.me/573001112233?text=¡Hola!%20Quiero%20hacer%20un%20pedido%20🎂"
+          className="btn-float whatsapp-float"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i className="fab fa-whatsapp"></i>
+        </a>
 
-      {/* Quiénes Somos */}
-      <AboutUs />
+        {/* Botón Carrito */}
+        <a href="#carrito" className="btn-float cart-float">
+          <i className="fas fa-shopping-cart"></i>
+          {totalItems > 0 && <span className="cart-badge">{totalItems}</span>}
+        </a>
 
-      {/* Contáctanos */}
-      <Contact />
+        <Cart
+          carrito={carrito}
+          onEliminar={eliminarDelCarrito}
+          onComprarWhatsApp={comprarWhatsApp}
+        />
 
-      {/* Footer */}
-      <Footer />
+        {/* Quiénes Somos */}
+        <AboutUs />
+
+        {/* Footer */}
+        <Footer />
+      </div>
     </div>
   );
 };
